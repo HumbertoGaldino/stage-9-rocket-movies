@@ -6,8 +6,6 @@
 
 Frontend do projeto RocketMovies, desenvolvido como desafio para o Stage 9 da formação Explorer da Rocketseat.
 
-!["Página home"](./src/assets/home.png)
-
 <h2 id="tech">💻 Tecnologias</h2>
 
 Foram utilizados para construção deste projeto as tecnologias abaixo:
