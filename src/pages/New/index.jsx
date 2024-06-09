@@ -17,13 +17,15 @@ import { Container, Form } from "./styles";
 
 export function New() {
   const [title, setTitle] = useState("");
-  const [rating, setRating] = useState("");
+  const [movieRate, setMovieRate] = useState("");
   const [description, setDescription] = useState("");
 
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState("");
 
   const [loading, setLoading] = useState(false);
+
+  const user = JSON.parse(localStorage.getItem("@foodexplorer:user"));
 
   const navigate = useNavigate();
 
@@ -48,7 +50,7 @@ export function New() {
         return alert("Digite o título do filme");
       }
 
-      const isRatingValid = rating >= 0 && rating <= 5;
+      const isRatingValid = movieRate >= 0 && movieRate <= 5;
 
       if (!isRatingValid) {
         return alert("A nota do filme deve ser entre 0 e 5");
@@ -60,10 +62,10 @@ export function New() {
         );
       }
 
-      await api.post("/notes", {
+      await api.post(`/notes/${user.id}`, {
         title,
         description,
-        rating,
+        movie_rate: movieRate,
         tags,
       });
 
@@ -119,8 +121,8 @@ export function New() {
               type="number"
               min="0"
               max="5"
-              value={rating}
-              onChange={(e) => setRating(e.target.value)}
+              value={movieRate}
+              onChange={(e) => setMovieRate(e.target.value)}
             />
           </div>
 

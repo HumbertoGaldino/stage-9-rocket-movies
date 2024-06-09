@@ -7,7 +7,7 @@ export function Movie({ data, ...rest }) {
     <Container {...rest}>
       <h1>{data.title}</h1>
 
-      <Rating grade={data.rating} isBigSize={false} />
+      <Rating grade={data.movie_rate} isBigSize={false} />
 
       <p>{data.description}</p>
 

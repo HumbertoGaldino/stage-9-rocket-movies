@@ -88,7 +88,7 @@ export function Details() {
 
             <div>
               <h1>{data.title}</h1>
-              <Rating grade={data.rating} isBigSize />
+              <Rating grade={data.movie_rate} isBigSize />
             </div>
 
             <div className="movie-info">
